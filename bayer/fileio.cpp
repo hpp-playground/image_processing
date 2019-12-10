@@ -126,6 +126,11 @@ void save_image(const char *fname, Image *img)
 
 /********** 画像の読み込み，保存　ここまで*******************************/
 
+void bayer_normal(Image *img, Image *result)
+{
+	return;
+}
+
 int main(int argc, char *argv[])
 {
 	char *fname = "input.pgm";
