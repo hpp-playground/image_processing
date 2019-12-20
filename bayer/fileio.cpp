@@ -142,10 +142,9 @@ void bayer_normal(Image *img, Image *result) {
              blue->data[k + 2 * w + 2]) /
             4;
       } else if (((i % 2) && !(j % 2)) || (!(i % 2) && (j % 2))) {
-        green->data[(i + 1) * w + j + 1] =
-            (green->data[k] + green->data[k + 2] + green->data[k + 2 * w] +
-             green->data[k + 2 * w + 2]) /
-            4;
+        green->data[k + 1] = (green->data[k] + green->data[k + 2] +
+                              green->data[k - w + 1] + green->data[k + w + 1]) /
+                             4;
       } else {
         red->data[k + 1] = (red->data[k] + red->data[k + 2]) / 2;
         red->data[k + w] = (red->data[k] + red->data[k + 2 * w]) / 2;
