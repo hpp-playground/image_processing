@@ -148,7 +148,6 @@ void bayer_normal(Image *img, Image *result) {
       } else {
         red->data[k + 1] = (red->data[k] + red->data[k + 2]) / 2;
         red->data[k + w] = (red->data[k] + red->data[k + 2 * w]) / 2;
-
         red->data[k + w + 1] =
             (red->data[k] + red->data[k + 2] + red->data[k + 2 * w] +
              red->data[k + 2 * w + 2]) /
